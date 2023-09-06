@@ -14,8 +14,8 @@ function App() {
 
   return (
     <div className='container flex'>
-      {/* <div className='row'> */}
-        <div className='col-8'>
+      <div className='row'>
+        <div className='col-8 col-sm-12 col-xl-8'>
           <Buscador colaboradores={listadoInicial} setlistadoFiltrado={setlistadoFiltrado}></Buscador>
           <Listado           
             listadoInicial={listadoInicial} 
@@ -24,7 +24,7 @@ function App() {
             setlistadoFiltrado={setlistadoFiltrado}>
           </Listado>
         </div>
-        <div className='col-4'>
+        <div className='col-4 col-sm-12 col-xl-4'>
             <Formulario 
               listadoInicial={listadoInicial} 
               setListadoInicial={setListadoInicial}
@@ -32,7 +32,7 @@ function App() {
               setlistadoFiltrado={setlistadoFiltrado}
               ></Formulario>
         </div>
-      {/* </div> */}
+      </div>
       
     </div>
   )

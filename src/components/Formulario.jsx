@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Alert from './Alert';
 import {useState, useId } from 'react';
 
-const Formulario = ({colaboradores,setlistadoFiltrado}) => {
+const Formulario = ({listadoInicial,setlistadoFiltrado, setListadoInicial}) => {
 
   const [nombre, setNombre] = useState('');
   const [correo, setCorreo] = useState('');
@@ -52,12 +52,19 @@ const Formulario = ({colaboradores,setlistadoFiltrado}) => {
  
 
 
-    setlistadoFiltrado([...colaboradores,{id: id,
+    setlistadoFiltrado([...listadoInicial,{id: id,
     nombre: nombre,
     correo: correo,
     edad: edad,
     cargo: cargo,
     telefono: telefono}]);
+
+    setListadoInicial([...listadoInicial,{id: id,
+        nombre: nombre,
+        correo: correo,
+        edad: edad,
+        cargo: cargo,
+        telefono: telefono}]);
 
     setNombre('');
     setCargo('');
