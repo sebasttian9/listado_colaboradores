@@ -1,12 +1,11 @@
 import Table from 'react-bootstrap/Table';
 
-const Listado = ({colaboradores}) => {
-    console.log(colaboradores)
+const Listado = ({listadoInicial,listadoFiltrado}) => {
+    
   return (
     <div>
         <Table striped bordered hover size="lg">
                 <thead>
-                    <th>id</th>
                     <th>Nombre</th>
                     <th>Correo</th>
                     <th>Edad</th>
@@ -15,11 +14,10 @@ const Listado = ({colaboradores}) => {
                 </thead>
                 <tbody>        
         { 
-        colaboradores.map( c =>  
+        listadoFiltrado.map( (c,index) =>  
             (
                 
-                        <tr>
-                            <td>{c.id}</td>
+                        <tr key={index}>
                             <td>{c.nombre}</td>
                             <td>{c.correo}</td>
                             <td>{c.edad}</td>
